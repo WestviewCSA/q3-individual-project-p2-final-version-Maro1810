@@ -1,3 +1,21 @@
 Questions:
 
 Write as many questions as you can based on the project specs.
+
+1. When is this project due? [O]
+2. Can we use pre-existing implemented data structures for queue and stack? [C]
+3. Are we allowed to use existing algorithms for optimizing the path? (such as A*) [C]
+4. What is meant by a "maze level?" [O]
+5. Does the maze-solving algorithm have to work with every possible maze with the shortest path
+to get full credit? [C]
+6. Are we allowed to use any data structures outside of stacks and queues? [C]
+7. If your solution for the main assignment works, and you attempt the extra credit, but it only
+works in some scenarios, do you still get some extra credit? [C]
+8. Is there a limit for runtime to get full credit for the project? If so, what is it? [C/O]
+9. How much credit do you get if your algorithm takes a long time, but it achieves the right solution? [O]
+10. Are we allowed to make our own test cases or will test cases be provided? [O]
+11. How often do we need to commit and push our code? [O]
+12. What do you do if you finish the project early, but you need to commit and push for credit? [O]
+13. Where should I start with the project? [O]
+14. Is brute forcing allowed for full credit? [C]
+15. Does our code have to be well-commented for full credit? [C]
