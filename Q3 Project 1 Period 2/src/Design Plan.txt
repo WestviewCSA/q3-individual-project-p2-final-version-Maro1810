@@ -1,0 +1,30 @@
+Week 1:
+
+- Create valid maps for easy, medium, and hard difficulties, and 
+make sure that I can push to Github properly
+
+- Also program methods to read a map and store the values in an 
+array
+
+- Begin working on the queue-based approach for finding the solution to the 
+map
+- Try to have this done by the end of the week (before week 2)
+
+Week 2:
+
+- Work on stack-based approach and finish this before the middle of the week
+
+- Begin thinking about how to optimize the pathfinding, and look into 
+prominent search algorithms (i.e. A*) and extract the main ideas from them
+to program my own algorithm
+
+- Start optimizing pathfinding, and stress test both the queue-based and stack-based
+approaches to see if they fail in any scenario
+
+Week 3
+
+- Finish optimization of pathfinding and continue bugtesting
+
+- implement exceptions for maps and command line arguments
+
+- submit assignment before 3/22 at 11:59 pm
