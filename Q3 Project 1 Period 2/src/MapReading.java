@@ -1,5 +1,7 @@
 import java.io.*;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class MapReading {
@@ -50,6 +52,31 @@ public class MapReading {
 		
 		
 		printMap(map2);
+	}
+	
+	public static String[][][] queueBasedSolution(File file) throws FileNotFoundException {
+		String[][][] map = readMap(file);
+		
+		boolean found = false;
+		
+		Coordinate wolverineLocation = new Coordinate();
+		
+		Queue<Coordinate> queuedLocations = new LinkedList<Coordinate>();
+		Queue<Coordinate> visitedLocations = new LinkedList<Coordinate>();
+		
+		for (int level = 0; level < map.length; level++) {
+			for (int row = 0; row < map[level].length; row++) {
+				for (int col = 0; col < map[level][row].length; col++) {
+					if (map[level][row][col].equals("W")) {
+						wolverineLocation = new Coordinate(level, row, col);
+					}
+				}
+			}
+		}
+		
+		queuedLocations.add(wolverineLocation);
+		
+		
 	}
 	
 	public static String[][][] readMap(File file) throws FileNotFoundException{
