@@ -76,6 +76,26 @@ public class MapReading {
 		
 		queuedLocations.add(wolverineLocation);
 		
+		do {
+			Coordinate currLocation = queuedLocations.remove();
+			visitedLocations.add(currLocation);
+			
+			if (currLocation.getX()-1 >= 0) {
+				Coordinate newCoord = new Coordinate(currLocation.getLevel(), currLocation.getX() - 1, currLocation.getY());
+				String newCoordSymbol = getSymbol(newCoord, map);
+				
+				if (!newCoordSymbol.equals("@")) {
+					if (newCoordSymbol.equals("$")) {
+						found = true;
+					}
+					else {
+						
+					}
+				}
+			}
+		}
+		while(!found);
+		
 		
 	}
 	
@@ -134,6 +154,13 @@ public class MapReading {
 		return map;
 	}
 	
+
+	 /*
+	  * precondition: coord is a valid coordinate in the map
+	  */
+	public static String getSymbol(Coordinate coord, String[][][] map) {
+		return map[coord.getLevel()][coord.getX()][coord.getY()];
+	}
 	
 	public static void printMap(String[][][] map) {
 		for (int i = 0; i < map.length; i++) {
