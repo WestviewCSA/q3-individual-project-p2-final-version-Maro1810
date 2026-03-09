@@ -26,4 +26,20 @@ public class Coordinate {
 	public int getY() {
 		return y;
 	}
+	
+	public Coordinate north() {
+		return new Coordinate(this.x-1, y, level);
+	}
+	
+	public Coordinate south() {
+		return new Coordinate(this.x+1, y, level);
+	}
+	
+	public Coordinate east() {
+		return new Coordinate(x, this.y+1, level);
+	}
+	
+	public Coordinate west() {
+		return new Coordinate(x, this.y-1, level);
+	}
 }
