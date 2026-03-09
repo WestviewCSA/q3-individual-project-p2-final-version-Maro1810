@@ -57,6 +57,7 @@ public class QueueBased {
 			while(!found);
 		
 		}
+		return null;
 	}
 	
 	private Coordinate findWolverine(int level) {
