@@ -58,11 +58,10 @@ public class QueueBased {
 			
 			Coordinate c = endLocation.prev;
 			
-			while(c != null) {
+			while(c != null && !map.getSymbol(c).equals("W")) {
 				map.setSymbol(c, "+");
+				c = c.prev;
 			}
-			
-			return map;
 			
 		}
 		
