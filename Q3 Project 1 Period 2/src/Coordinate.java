@@ -28,18 +28,22 @@ public class Coordinate {
 	}
 	
 	public Coordinate north() {
-		return new Coordinate(this.x-1, y, level);
+		return new Coordinate(level, this.x-1, this.y);
 	}
 	
 	public Coordinate south() {
-		return new Coordinate(this.x+1, y, level);
+		return new Coordinate(level, this.x+1, this.y);
 	}
 	
 	public Coordinate east() {
-		return new Coordinate(x, this.y+1, level);
+		return new Coordinate(level, this.x, this.y+1);
 	}
 	
 	public Coordinate west() {
-		return new Coordinate(x, this.y-1, level);
+		return new Coordinate(level, this.x, this.y-1);
+	}
+
+	public String toString() {
+		return "(" + level + ", " + x + ", " + y + ")";
 	}
 }

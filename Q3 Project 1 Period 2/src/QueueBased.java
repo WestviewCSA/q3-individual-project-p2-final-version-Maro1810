@@ -23,40 +23,39 @@ public class QueueBased {
 		Queue<Coordinate> visitedLocations = new LinkedList<Coordinate>();
 		
 		queuedLocations.add(wolverineLocation);
-		
-		do {
+
+		while (!found) {
 			Coordinate currLocation = queuedLocations.remove();
 			visitedLocations.add(currLocation);
 			
 			Coordinate[] nextLocations = {currLocation.north(), currLocation.south(), currLocation.east(), currLocation.west()};
 			
 				for (int i = 0; i < nextLocations.length; i++) {
-					if (map.inBounds(nextLocations[i])) {
-						if (!map.getSymbol(nextLocations[i]).equals("@")) {
-							if (map.endSymbol(nextLocations[i])) {
-								if (!queuedLocations.contains(nextLocations[i]) && !visitedLocations.contains(nextLocations[i])) {
-									endLocation = nextLocations[i];
-									found = true;
-									break;
-								}
+					if (map.inBounds(nextLocations[i]) && !map.getSymbol(nextLocations[i]).equals("@")) {
+						if (map.endSymbol(nextLocations[i])) {
+							if (!contains(queuedLocations, nextLocations[i]) && !contains(visitedLocations, nextLocations[i])) {
+								endLocation = nextLocations[i];
+								found = true;
+								break;
+							}
 								
-							}
-							
-							else {
-								if (!queuedLocations.contains(nextLocations[i]) && !visitedLocations.contains(nextLocations[i])) {
-									queuedLocations.add(nextLocations[i]);
-								}
-							}
-							
 						}
-						
-						
+							
+						else if (map.getSymbol(nextLocations[i]).equals(".")) {
+							if (!contains(queuedLocations, nextLocations[i]) && !contains(visitedLocations, nextLocations[i])) {
+								queuedLocations.add(nextLocations[i]);
+							}
+						}		
 					}
 				}
+				
 			}
-			while(!found);
+			System.out.println(queuedLocations);
+			System.out.println(visitedLocations);
+			System.out.println(endLocation);
 		
 		}
+
 		return null;
 	}
 	
@@ -73,5 +72,14 @@ public class QueueBased {
 		
 		
 		return wolverineLocation;
+	}
+
+	private boolean contains(Queue<Coordinate> queue, Coordinate coordinate) {
+		for (Coordinate c : queue) {
+			if (c.getLevel() == coordinate.getLevel() && c.getX() == coordinate.getX() && c.getY() == coordinate.getY()) {
+				return true;
+			}
+		}
+		return false;
 	}
 }
