@@ -4,11 +4,15 @@ public class Coordinate {
 	private int x;
 	private int y;
 	private int level;
+	public Coordinate prev;
 	
 	public Coordinate(int level, int x, int y) {
 		this.level = level;
 		this.x = x;
 		this.y = y;
+		
+		prev = null;
+		
 	}
 	
 	public Coordinate() {
@@ -44,6 +48,6 @@ public class Coordinate {
 	}
 
 	public String toString() {
-		return "(" + level + ", " + x + ", " + y + ")";
+		return "(" + level + ", " + x + ", " + y + ")" + " prev: " + prev;
 	}
 }

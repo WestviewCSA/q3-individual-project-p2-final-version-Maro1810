@@ -10,7 +10,7 @@ public class QueueBased {
 		this.map = map;
 	}
 	
-	public String[][][] queueBasedSolution() throws FileNotFoundException {
+	public Map queueBasedSolution() throws FileNotFoundException {
 		for (int l = 0; l < map.numLevels(); l++) {
 			
 		
@@ -35,6 +35,7 @@ public class QueueBased {
 						if (map.endSymbol(nextLocations[i])) {
 							if (!contains(queuedLocations, nextLocations[i]) && !contains(visitedLocations, nextLocations[i])) {
 								endLocation = nextLocations[i];
+								endLocation.prev = currLocation;
 								found = true;
 								break;
 							}
@@ -43,6 +44,7 @@ public class QueueBased {
 							
 						else if (map.getSymbol(nextLocations[i]).equals(".")) {
 							if (!contains(queuedLocations, nextLocations[i]) && !contains(visitedLocations, nextLocations[i])) {
+								nextLocations[i].prev = currLocation;
 								queuedLocations.add(nextLocations[i]);
 							}
 						}		
@@ -50,13 +52,23 @@ public class QueueBased {
 				}
 				
 			}
-			System.out.println(queuedLocations);
-			System.out.println(visitedLocations);
-			System.out.println(endLocation);
-		
+//			System.out.println(queuedLocations);
+//			System.out.println(visitedLocations);
+//			System.out.println(endLocation);
+			
+			Coordinate c = endLocation.prev;
+			
+			while(c != null) {
+				map.setSymbol(c, "+");
+			}
+			
+			return map;
+			
 		}
+		
+		
 
-		return null;
+		return map;
 	}
 	
 	private Coordinate findWolverine(int level) {

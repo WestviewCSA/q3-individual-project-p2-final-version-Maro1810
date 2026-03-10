@@ -113,7 +113,9 @@ public class Map {
 		}
 	}
 	
-
+	public void setSymbol(Coordinate coord, String symbol) {
+		map[coord.getLevel()][coord.getX()][coord.getY()] = symbol;
+	}
 	 /*
 	  * precondition: coord is a valid coordinate in the map
 	  */
