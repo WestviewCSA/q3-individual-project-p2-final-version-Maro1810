@@ -9,6 +9,7 @@ public class Runner {
 		Coordinate coord = new Coordinate(0, 0, 0);
 		// map.setSymbol(coord, "-");
 		System.out.println(queueBased.queueBasedSolution());
+		System.out.println(queueBased.time);
 		// System.out.println(map);
 	}
 }

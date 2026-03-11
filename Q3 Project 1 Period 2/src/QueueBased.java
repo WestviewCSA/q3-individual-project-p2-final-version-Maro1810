@@ -5,6 +5,7 @@ import java.util.Queue;
 public class QueueBased {
 	
 	Map map;
+	double time = System.currentTimeMillis();
 	
 	public QueueBased(Map map) {
 		this.map = map;
@@ -21,7 +22,7 @@ public class QueueBased {
 		
 		Queue<Coordinate> queuedLocations = new LinkedList<Coordinate>();
 		Queue<Coordinate> visitedLocations = new LinkedList<Coordinate>();
-		
+		System.out.println(wolverineLocation);
 		queuedLocations.add(wolverineLocation);
 
 		while (!found) {
@@ -52,9 +53,6 @@ public class QueueBased {
 				}
 				
 			}
-//			System.out.println(queuedLocations);
-//			System.out.println(visitedLocations);
-//			System.out.println(endLocation);
 			
 			Coordinate c = endLocation.prev;
 			
@@ -65,7 +63,7 @@ public class QueueBased {
 			
 		}
 		
-		
+		time = System.currentTimeMillis() - time;
 
 		return map;
 	}
