@@ -1,16 +1,14 @@
 import java.io.FileNotFoundException;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.Stack;
 
-public class QueueBased {
-	
+public class StackBased {
 	Map map;
 	
-	public QueueBased(Map map) {
+	public StackBased(Map map) {
 		this.map = map;
 	}
 	
-	public Map queueBasedSolution() throws FileNotFoundException {
+	public Map stackBasedSolution() throws FileNotFoundException {
 		for (int l = 0; l < map.numLevels(); l++) {
 			
 		
@@ -19,14 +17,15 @@ public class QueueBased {
 		Coordinate wolverineLocation = findWolverine(l);
 		Coordinate endLocation = new Coordinate();
 		
-		Queue<Coordinate> queuedLocations = new LinkedList<Coordinate>();
-		Queue<Coordinate> visitedLocations = new LinkedList<Coordinate>();
+		Stack<Coordinate> stackedLocations = new Stack<Coordinate>();
+		Stack<Coordinate> visitedLocations = new Stack<Coordinate>();
 		System.out.println(wolverineLocation);
-		queuedLocations.add(wolverineLocation);
+		stackedLocations.push(wolverineLocation);
+	
 
 		while (!found) {
-			Coordinate currLocation = queuedLocations.remove();
-			visitedLocations.add(currLocation);
+			Coordinate currLocation = stackedLocations.pop();
+			visitedLocations.push(currLocation);
 			
 			Coordinate[] nextLocations = {map.north(currLocation), map.south(currLocation), map.east(currLocation), map.west(currLocation)};
 			
@@ -53,7 +52,7 @@ public class QueueBased {
 								nextLocations[i].visited = true;
 								
 								nextLocations[i].prev = currLocation;
-								queuedLocations.add(nextLocations[i]);
+								stackedLocations.push(nextLocations[i]);
 							}
 						}		
 					}
@@ -90,3 +89,4 @@ public class QueueBased {
 	}
 
 }
+
