@@ -18,14 +18,13 @@ public class StackBased {
 		Coordinate endLocation = new Coordinate();
 		
 		Stack<Coordinate> stackedLocations = new Stack<Coordinate>();
-		Stack<Coordinate> visitedLocations = new Stack<Coordinate>();
+
 		System.out.println(wolverineLocation);
 		stackedLocations.push(wolverineLocation);
 	
 
 		while (!found) {
 			Coordinate currLocation = stackedLocations.pop();
-			visitedLocations.push(currLocation);
 			
 			Coordinate[] nextLocations = {map.north(currLocation), map.south(currLocation), map.east(currLocation), map.west(currLocation)};
 			

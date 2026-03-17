@@ -20,13 +20,12 @@ public class QueueBased {
 		Coordinate endLocation = new Coordinate();
 		
 		Queue<Coordinate> queuedLocations = new LinkedList<Coordinate>();
-		Queue<Coordinate> visitedLocations = new LinkedList<Coordinate>();
+
 		System.out.println(wolverineLocation);
 		queuedLocations.add(wolverineLocation);
 
 		while (!found) {
 			Coordinate currLocation = queuedLocations.remove();
-			visitedLocations.add(currLocation);
 			
 			Coordinate[] nextLocations = {map.north(currLocation), map.south(currLocation), map.east(currLocation), map.west(currLocation)};
 			
