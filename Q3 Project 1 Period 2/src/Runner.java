@@ -8,7 +8,7 @@ public class Runner {
 		QueueBased queueBased = new QueueBased(map);
 		StackBased stackBased = new StackBased(map);
 		double time = (double) System.currentTimeMillis()/1000;
-		
+		System.out.println(map);
 		queueBased.solve();
 		queueBased.printSolution();
 //		time = (double)System.currentTimeMillis()/1000 - time;

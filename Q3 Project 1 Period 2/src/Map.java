@@ -105,14 +105,10 @@ public class Map {
 		else {
 			while (scanner.hasNext()) {
 				String symbol = scanner.next();
-				int row = Integer.parseInt(scanner.next());
-				int col = Integer.parseInt(scanner.next());
-				int level = Integer.parseInt(scanner.next());
+				int row = scanner.nextInt();
+				int col = scanner.nextInt();
+				int level = scanner.nextInt();
 				
-//				if (row <= 0 || col <= 0 || level <= 0) {
-//					scanner.close();
-//					throw new IncorrectMapFormatException("Number of rows, columns, and levels must be a positive integer!");
-//				}
 				
 				map[level][row][col] = new Coordinate(level, row, col, symbol);
 				
