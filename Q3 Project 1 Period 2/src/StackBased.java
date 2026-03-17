@@ -8,7 +8,7 @@ public class StackBased {
 		this.map = map;
 	}
 	
-	public Map stackBasedSolution() throws FileNotFoundException {
+	public Map solve() throws FileNotFoundException {
 		for (int l = 0; l < map.numLevels(); l++) {
 			
 		
@@ -89,4 +89,3 @@ public class StackBased {
 	}
 
 }
-

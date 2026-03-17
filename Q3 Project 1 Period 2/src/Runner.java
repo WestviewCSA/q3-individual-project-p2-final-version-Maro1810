@@ -9,14 +9,12 @@ public class Runner {
 		StackBased stackBased = new StackBased(map);
 		double time = (double) System.currentTimeMillis()/1000;
 		
-		Map newMap = stackBased.stackBasedSolution();
+		Map newMap = queueBased.solve();
 		time = (double)System.currentTimeMillis()/1000 - time;
 		
 		System.out.println(time);
+		System.out.println(newMap);
 		
-		
-		
-//		System.out.println(stackBased.time);
-//		 System.out.println(map);
+	
 	}
 }

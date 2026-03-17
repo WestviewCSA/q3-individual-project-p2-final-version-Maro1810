@@ -10,7 +10,7 @@ public class QueueBased {
 		this.map = map;
 	}
 	
-	public Map queueBasedSolution() throws FileNotFoundException {
+	public Map solve() throws FileNotFoundException {
 		for (int l = 0; l < map.numLevels(); l++) {
 			
 		

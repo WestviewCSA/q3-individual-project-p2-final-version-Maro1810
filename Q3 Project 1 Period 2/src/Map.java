@@ -88,8 +88,8 @@ public class Map {
 					for (int col = 0; col < map[level][row].length; col++) {
 						String symbol = line.substring(col, col+1);
 						
-						if (!symbol.equals("@") || !symbol.equals("W") || !symbol.equals("|") || !symbol.equals("$") 
-								|| !symbol.equals(".")) {
+						if (!symbol.equals("@") && !symbol.equals("W") && !symbol.equals("|") && !symbol.equals("$") 
+								&& !symbol.equals(".")) {
 							scanner.close();
 							throw new IllegalMapCharacterException("Symbols must be W, |, $, ., or @!");	
 						}
@@ -116,8 +116,8 @@ public class Map {
 				
 				map[level][row][col] = new Coordinate(level, row, col, symbol);
 				
-				if (!symbol.equals("@") || !symbol.equals("W") || !symbol.equals("|") || !symbol.equals("$") 
-						|| !symbol.equals(".")) {
+				if (!symbol.equals("@") && !symbol.equals("W") && !symbol.equals("|") && !symbol.equals("$") 
+						&& !symbol.equals(".")) {
 					scanner.close();
 					throw new IllegalMapCharacterException("Symbols must be W, |, $, ., or @!");	
 				}
