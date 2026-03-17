@@ -69,7 +69,24 @@ public class QueueBased {
 			
 		}
 		
-		System.out.println(map);
+	}
+	
+	public void printSolution() {
+		if (!map.coordinateBased()) {
+			System.out.println(map);
+		}
+		
+		else {
+			for (int level = 0; level < map.getMap().length; level++) {
+				for (int row = 0; row < map.getMap()[level].length; row++) {
+					for (int col = 0; col < map.getMap()[level][row].length; col++) {
+						if (map.getMap()[level][row][col].symbol.equals("+")) {
+							System.out.println("+ " + row + " " + col + " " + level);
+						}
+					}
+				}
+			}
+		}
 	}
 	
 	private Coordinate findWolverine(int level) {

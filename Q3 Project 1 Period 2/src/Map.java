@@ -109,10 +109,10 @@ public class Map {
 				int col = Integer.parseInt(scanner.next());
 				int level = Integer.parseInt(scanner.next());
 				
-				if (row <= 0 || col <= 0 || level <= 0) {
-					scanner.close();
-					throw new IncorrectMapFormatException("Number of rows, columns, and levels must be a positive integer!");
-				}
+//				if (row <= 0 || col <= 0 || level <= 0) {
+//					scanner.close();
+//					throw new IncorrectMapFormatException("Number of rows, columns, and levels must be a positive integer!");
+//				}
 				
 				map[level][row][col] = new Coordinate(level, row, col, symbol);
 				
@@ -135,6 +135,10 @@ public class Map {
 			scanner.close();
 			
 		}
+	}
+	
+	public boolean coordinateBased() {
+		return coordinateBased;
 	}
 	
 	public void setSymbol(Coordinate coord, String symbol) {
