@@ -10,7 +10,7 @@ public class QueueBased {
 		this.map = map;
 	}
 	
-	public Map solve() throws FileNotFoundException {
+	public void solve() throws FileNotFoundException {
 		for (int l = 0; l < map.numLevels(); l++) {
 			
 		
@@ -69,8 +69,7 @@ public class QueueBased {
 			
 		}
 		
-
-		return map;
+		System.out.println(map);
 	}
 	
 	private Coordinate findWolverine(int level) {
