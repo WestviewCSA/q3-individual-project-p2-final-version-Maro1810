@@ -9,6 +9,8 @@ public class Coordinate {
 	public Coordinate prev;
 	public boolean visited;
 	
+	public int f, g, h;
+	
 	public Coordinate(int level, int x, int y, String symbol) {
 		this.level = level;
 		this.x = x;
@@ -17,6 +19,10 @@ public class Coordinate {
 		
 		prev = null;
 		visited = false;
+		
+		f = 0;
+		g = 0;
+		h = 0;
 		
 	}
 	

@@ -6,49 +6,6 @@ import java.util.Scanner;
 
 public class Map {
 	
-//	public static void main(String[] args) throws FileNotFoundException {
-//	
-////		boolean stackBased = false;
-////		boolean queueBased = false;
-////		boolean optimal = false;
-////		boolean showTime = false;
-////		boolean inCoord = false;
-////		boolean outCoord = false;
-////		
-////		for (String arg : args) {
-////			if (arg.equals("--Stack")) {
-////				stackBased = true;
-////			}
-////			if (arg.equals("--Queue")) {
-////				queueBased = true;
-////			}
-////			if (arg.equals("--Optimal")) {
-////				optimal = true;
-////			}
-////			if (arg.equals("--Time")) {
-////				showTime = true;
-////			}
-////			if (arg.equals("--Incoordinate")) {
-////				inCoord = true;
-////			}
-////			if (arg.equals("--Outcoordinate")) {
-////				outCoord = true;
-////			}
-////			if (arg.equals("--Help")) {
-////				System.out.println("help message");
-////			}
-////		}
-////		
-////		if (queueBased && stackBased) {
-////			System.out.println("you may only choose one pathfinding approach!");
-////			System.exit(-1);
-////		}
-////		if (inCoord && outCoord) {
-////			System.out.println("map format cannot be both incoordinate and outcoordinate!");
-////			System.exit(-1);
-////		}
-//		
-//	}
 
 	Coordinate[][][] map;
 	boolean coordinateBased;
