@@ -14,7 +14,7 @@ public class Map {
 	private int numCols;
 	private int numLevels;
 	
-	public Map(File file, boolean coordinateBased) throws FileNotFoundException, IllegalMapCharacterException, IncorrectMapFormatException {
+	public Map(File file, boolean coordinateBased) throws FileNotFoundException, IllegalMapCharacterException, IncorrectMapFormatException, IncompleteMapException {
 		this.file = file;
 		this.coordinateBased = coordinateBased;
 		
@@ -22,7 +22,7 @@ public class Map {
 	}
 	
 	
-	private void readMap() throws FileNotFoundException, IllegalMapCharacterException, IncorrectMapFormatException{
+	private void readMap() throws FileNotFoundException, IllegalMapCharacterException, IncorrectMapFormatException, IncompleteMapException{
 		Scanner scanner = new Scanner(file);
 		
 		
@@ -52,6 +52,17 @@ public class Map {
 						}
 						
 						map[level][row][col] = new Coordinate(level, row, col, symbol);
+					}
+				}
+			}
+			for (int level = 0; level < map.length; level++) {
+				for (int row = 0; row < map[level].length; row++) {
+					for (int col = 0; col < map[level][row].length; col++) {
+						if (map[level][row][col] == null) {
+							scanner.close();
+							
+							throw new IncompleteMapException("Map has one or more incomplete coordinates!");
+						}	
 					}
 				}
 			}

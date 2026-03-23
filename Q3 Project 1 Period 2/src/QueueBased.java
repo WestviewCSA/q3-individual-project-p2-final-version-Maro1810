@@ -71,8 +71,8 @@ public class QueueBased {
 		
 	}
 	
-	public void printSolution() {
-		if (!map.coordinateBased()) {
+	public void printSolution(boolean outCoord) {
+		if (!outCoord) {
 			System.out.println(map);
 		}
 		
