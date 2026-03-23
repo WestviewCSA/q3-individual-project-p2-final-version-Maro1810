@@ -53,7 +53,7 @@ public class p1 {
 
 		if (queueApproach) {
 			queueBased.solve();
-			time = (double)System.currentTimeMillis()/1000 - time;
+			time = (double) System.currentTimeMillis()/1000 - time;
 			if (showTime) {
 				System.out.println(time);
 			}
@@ -61,7 +61,7 @@ public class p1 {
 		}
 		if (stackApproach) {
 			stackBased.solve();
-			time = (double)System.currentTimeMillis()/1000 - time;
+			time = (double) System.currentTimeMillis()/1000 - time;
 
 			if (showTime) {
 				System.out.println(time);

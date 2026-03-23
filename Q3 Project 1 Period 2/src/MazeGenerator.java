@@ -1,7 +1,7 @@
 import java.util.*;
 public class MazeGenerator {
-   static int rows = 5; // 你可以改回 200，为了演示先设为 40
-   static int cols = 5;
+   static int rows = 20; // 你可以改回 200，为了演示先设为 40
+   static int cols = 20;
    static char[][] maze = new char[rows][cols];
    static Random rand = new Random();
    public static void main(String[] args) {
